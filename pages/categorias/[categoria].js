@@ -81,8 +81,7 @@ export default function Categoria({ categoria, categorias }) {
                   <p>Aun se están cocinando los articulos vuelve pronto.</p>
                   <iframe
                     src="https://giphy.com/embed/srBH5iwo7W15C"
-                    width="480"
-                    height="364"
+                 className="gif"
                     frameBorder="0"
                     allowFullScreen
                   ></iframe>
