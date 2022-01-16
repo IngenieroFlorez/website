@@ -4,6 +4,7 @@ import { GraphQLClient } from "graphql-request";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import toast, { Toaster } from "react-hot-toast";
+import * as gtag from "../../lib/gtag";
 export default function FormContact() {
   const [loading, setLoading] = useState(false);
   const graphcms = new GraphQLClient(
@@ -14,6 +15,12 @@ export default function FormContact() {
     initialValues: InitialValues(),
     validationSchema: ValidationSchema(),
     onSubmit: async (values, { resetForm }) => {
+      gtag.event({
+        action: "Contacto",
+        category: "Formulario",
+        label: "Formulario de contacto",
+        value:1,
+      });
       setLoading(true);
 
       const response = await graphcms.request(

@@ -7,6 +7,7 @@ import { GraphQLClient } from "graphql-request";
 import Image from "next/image";
 import Link from "next/link";
 import VideoCard from "../../components/VideoCard";
+import Seo from "../../components/Seo";
 
 export async function getServerSideProps(context) {
   const graphcms = new GraphQLClient(
@@ -47,6 +48,7 @@ export default function Index({ articulos, categorias }) {
 
   return (
     <Layout>
+       <Seo  title={"DevFlorez | Artículos"}/>
       <div className="blog">
         <h1>Artículos</h1>
         <Grid columns={2} doubling>

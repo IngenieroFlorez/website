@@ -2,9 +2,11 @@ import React from "react";
 import Layout from "../../components/Layout";
 import Image from "next/image";
 import { Grid } from "semantic-ui-react";
+import Seo from "../../components/Seo";
 export default function index() {
   return (
     <Layout>
+           <Seo  title={"DevFlorez | Proyectos"}/>
       <div className="proyectos">
         <h1>Proyectos</h1>
 

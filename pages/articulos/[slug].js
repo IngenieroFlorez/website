@@ -6,6 +6,7 @@ import VideoCard from "../../components/VideoCard";
 import Image from "next/image";
 import Link from "next/link";
 import NotFound from "../../components/NotFound/NotFound";
+import Seo from "../../components/Seo";
 export async function getServerSideProps(context) {
   const { params } = context;
   const { slug } = params;
@@ -44,11 +45,15 @@ export async function getServerSideProps(context) {
   };
 }
 export default function Slug({ articulo, categorias }) {
-    if  (articulo === null  ){
-        return <NotFound/>
-    }
+  if (articulo === null) {
+    return <NotFound />;
+  }
   return (
     <Layout>
+      <Seo
+        title={`DevFlorez | ${articulo.titulo}`}
+        description={articulo.descripcion}
+      />
       <div className="blog">
         <h1>{articulo.titulo}</h1>
         <Grid columns={2} doubling>
@@ -68,22 +73,20 @@ export default function Slug({ articulo, categorias }) {
                     href="/categorias/[categoria]"
                     as={`/categorias/${categoria.categoria}`}
                     key={categoria.id}
-                   
                   >
-                      <a>
+                    <a>
                       <List.Item>
-                      <List.Header>{categoria.titulo}</List.Header>
-                      <List.Content>
-                        <Image
-                          src={categoria.imagen.url}
-                          alt={categoria.titulo}
-                          width={50}
-                          height={50}
-                        />
-                      </List.Content>
-                    </List.Item>
-                      </a>
-               
+                        <List.Header>{categoria.titulo}</List.Header>
+                        <List.Content>
+                          <Image
+                            src={categoria.imagen.url}
+                            alt={categoria.titulo}
+                            width={50}
+                            height={50}
+                          />
+                        </List.Content>
+                      </List.Item>
+                    </a>
                   </Link>
                 ))}
               </List>

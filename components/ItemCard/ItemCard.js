@@ -3,9 +3,9 @@ import Link from "next/link";
 import { Grid } from "semantic-ui-react";
 import { Icon } from "@iconify/react";
 import moment from "moment";
+import * as gtag from "../../lib/gtag";
 import "moment/locale/es";
 export default function ItemCard({
-  
   id,
   slug,
   titulo,
@@ -13,9 +13,17 @@ export default function ItemCard({
   categorias,
   fecha,
 }) {
- 
+  const Analytics = () => {
+    gtag.event({
+      action: "click",
+      category: "Articulo",
+      label: slug,
+      value: id,
+    });
+  };
+
   return (
-    <div className="itemCard"   id={id}>
+    <div className="itemCard" id={id}>
       <div className="itemCard__title">
         <Grid columns={2} textAlign="left" doubling>
           <Grid.Column>
@@ -43,7 +51,7 @@ export default function ItemCard({
       </div>
       <div className="itemCard__footer">
         <Link href={`/articulos/${slug}`} passHref>
-          <a>Leer más</a>
+          <a onClick={() => Analytics()}>Leer más</a>
         </Link>
         <strong> {moment(fecha).fromNow()}</strong>
       </div>

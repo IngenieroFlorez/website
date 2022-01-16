@@ -6,6 +6,8 @@ import ItemCard from "../../components/ItemCard";
 import Image from "next/image";
 import Link from "next/link";
 import VideoCard from "../../components/VideoCard";
+import Seo from "../../components/Seo";
+import NotFound from "../../components/NotFound/NotFound";
 export async function getServerSideProps(context) {
   const { params } = context;
   const { categoria } = params;
@@ -49,9 +51,12 @@ export async function getServerSideProps(context) {
 }
 export default function Categoria({ categoria, categorias }) {
   const { titulo, articulo } = categoria;
-
+  if (categoria === null) {
+    return <NotFound />;
+  }
   return (
     <Layout>
+           <Seo  title={`DevFlorez | ${titulo}`}/>
       <div className="blog">
         <h1>{titulo}</h1>
 

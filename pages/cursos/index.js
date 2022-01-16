@@ -3,9 +3,11 @@ import Layout from "../../components/Layout";
 import Image from "next/image";
 import Slider from "react-slick";
 import { SettingsAdv } from "../../utils/settings";
+import Seo from "../../components/Seo";
 export default function Index() {
   return (
     <Layout>
+           <Seo  title={"DevFlorez | Cursos"}/>
       <div className="cursos">
         
   
