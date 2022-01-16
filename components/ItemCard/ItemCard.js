@@ -17,12 +17,12 @@ export default function ItemCard({
   return (
     <div className="itemCard"   id={id}>
       <div className="itemCard__title">
-        <Grid columns={2} textAlign="left" stretched>
+        <Grid columns={2} textAlign="left" doubling>
           <Grid.Column>
             <h3>{titulo}</h3>
           </Grid.Column>
 
-          <Grid.Column>
+          <Grid.Column className="itemCard__title__category">
             <Grid
               columns={categorias.length == 0 ? 1 : categorias.length}
               doubling

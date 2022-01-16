@@ -46,6 +46,22 @@
       }
     
     }
+    .ui.grid{
+      .column{
+        &__category{
+          @media (max-width: 767px) {
+            display: none !important;
+            font-size: 5px;
+          }
+        }
+      }
+    }
+    &__category{
+      @media (max-width: 767px) {
+        display: none;
+        font-size: 5px;
+      }
+    }
   }
   a {
     font-family: Lilita One, -apple-system, BlinkMacSystemFont, "Segoe UI",
