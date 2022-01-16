@@ -4,7 +4,7 @@ import FormContact from "../components/FormContact/FormContact";
 import { Grid, List, Icon } from "semantic-ui-react";
 import Slider from "react-slick";
 import ItemCard from "../components/ItemCard";
-
+import Seo from "../components/Seo";
 import { GraphQLClient } from "graphql-request";
 
 
@@ -56,6 +56,7 @@ export default function Contacto({ articulos }) {
   };
   return (
     <Layout>
+      <Seo  title={"DevFlorez | Contacto"}/>
       <div className="contacto">
         <h1>¿Quieres contactarme?</h1>
         <Grid columns={2} doubling>

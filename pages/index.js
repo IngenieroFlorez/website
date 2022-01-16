@@ -6,6 +6,7 @@ import { SettingsAdv, SettingsVideo } from "../utils/settings";
 import VideoCard from "../components/VideoCard";
 import ItemCard from "../components/ItemCard";
 import { GraphQLClient } from "graphql-request";
+import Seo from "../components/Seo";
 export async function getServerSideProps(context) {
   const graphcms = new GraphQLClient(
     "https://api-us-east-1.graphcms.com/v2/ckyf5yg810lr201z3f2k84109/master"
@@ -44,6 +45,32 @@ export async function getServerSideProps(context) {
 export default function Home({ articulos }) {
   return (
     <Layout>
+      <Seo>
+        <meta property="og:url" content="https://www.devflorez.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="DevFlorez" />
+        <meta
+          property="og:description"
+          content="Quiero enseñarte todo mis conocimientos, haciendo una gran combinación entre la mecatrónica y el desarrollo web ¿Qué te parece un proyecto en NextJS más Arduino?"
+        />
+        <meta
+          property="og:image"
+          content="https://media.graphcms.com/Yk8Hb9Y6RwC57RyMr9B9"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="devflorez.com" />
+        <meta property="twitter:url" content="https://www.devflorez.com/" />
+        <meta name="twitter:title" content="DevFlorez" />
+        <meta
+          name="twitter:description"
+          content="Quiero enseñarte todo mis conocimientos, haciendo una gran combinación entre la mecatrónica y el desarrollo web ¿Qué te parece un proyecto en NextJS más Arduino?"
+        />
+        <meta
+          name="twitter:image"
+          content="https://media.graphcms.com/Yk8Hb9Y6RwC57RyMr9B9"
+        />
+      </Seo>
       <div className="Home">
         <Grid centered doubling columns={2}>
           <Grid.Column>
