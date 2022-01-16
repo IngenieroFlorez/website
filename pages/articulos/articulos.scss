@@ -1,6 +1,14 @@
 .blog {
   margin-top: 20px;
   margin-bottom: 20px;
+  img{
+    height: 360px ;
+    width: 480px;
+    @media only screen and (max-width: 767px) {
+      height: 240px ;
+      width: 320px;
+    }
+  }
   h1 {
     font-size: 2em;
     font-family: Lilita One, -apple-system, BlinkMacSystemFont, "Segoe UI",
