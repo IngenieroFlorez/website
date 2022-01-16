@@ -1,0 +1,19 @@
+//colors
+@import "./colors.scss";
+
+//components
+@import "../components/Navbar/Navbar.scss";
+@import "../components/Footer/Footer.scss";
+@import "../components/Layout/Layout.scss";
+@import "../components/VideoCard/VideoCard.scss";
+@import "../components/ItemCard/ItemCard.scss";
+@import "../components/FormContact/FormContact.scss";
+@import "../components/NotFound/NotFound.scss";
+//pages
+@import "../pages/index.scss";
+@import "../pages/contacto.scss";
+@import "../pages/proyectos/proyectos.scss";
+@import "../pages/cursos/cursos.scss";
+@import "../pages/articulos/articulos.scss";
+//fonts
+@import "../fonts/fonts.scss";
