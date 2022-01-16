@@ -77,11 +77,7 @@ export default function Home({ articulos }) {
             <div className="Home__left">
               <h1>Hola Mundo. Bienvenidos a mi sitio web</h1>
               <p>
-                Soy ingeniero mecatrónico con alma de desarrollador frontend y
-                quiero enseñarte todo lo que he aprendió en mis estudios,
-                haciendo una gran combinación entre la mecatrónica y el
-                desarrollo web. ¿Qué te parece un proyecto en NextJS más
-                Arduino?
+              Soy ingeniero mecatrónico con alma de desarrollador frontend y quiero enseñarte todo lo que he aprendido en mis estudios, haciendo una gran combinación entre la mecatrónica y el desarrollo web. ¿Qué te parece un proyecto en NextJS más Arduino?
               </p>
               <List horizontal>
                 <List.Item>
