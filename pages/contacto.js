@@ -1,13 +1,12 @@
 import React from "react";
 import Layout from "../components/Layout";
 import FormContact from "../components/FormContact/FormContact";
-import { Grid, List, Segment, Icon } from "semantic-ui-react";
+import { Grid, List, Icon } from "semantic-ui-react";
 import Slider from "react-slick";
 import ItemCard from "../components/ItemCard";
-import { SettingsAdv } from "../utils/Settings";
+
 import { GraphQLClient } from "graphql-request";
-import Image from "next/image";
-import Link from "next/link";
+
 
 export async function getServerSideProps(context) {
   const graphcms = new GraphQLClient(
@@ -45,6 +44,16 @@ export async function getServerSideProps(context) {
   };
 }
 export default function Contacto({ articulos }) {
+  const SettingsAdv = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
+  };
   return (
     <Layout>
       <div className="contacto">
