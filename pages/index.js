@@ -75,7 +75,7 @@ export default function Home({ articulos }) {
         <Grid centered doubling columns={2}>
           <Grid.Column>
             <div className="Home__left">
-              <h1>Hola Mundo. Bienvidos a mi sitio web</h1>
+              <h1>Hola Mundo. Bienvenidos a mi sitio web</h1>
               <p>
                 Soy ingeniero mecatrónico con alma de desarrollador frontend y
                 quiero enseñarte todo lo que he aprendió en mis estudios,
