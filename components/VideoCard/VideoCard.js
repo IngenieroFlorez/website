@@ -5,7 +5,7 @@ export default function VideoCard() {
   const [open, setOpen] = useState(false);
   return (
     <div className="VideoCard">
-      <Image src="/images/Portada1.jpg" width={1280} height={720} alt="" />
+      <Image src="/images/SWR.png" width={1280} height={720} alt="" />
       <Modal
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
@@ -13,8 +13,8 @@ export default function VideoCard() {
         trigger={<Button>Play</Button>}
       >
         <Embed
-          id="O6Xo21L0ybE"
-          placeholder="/images/Portada1.jpg"
+          id="8Qs46XlwKXs"
+          placeholder="/images/SWR.png"
           source="youtube"
         />
       </Modal>
