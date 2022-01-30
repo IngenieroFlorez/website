@@ -18,7 +18,7 @@ export default function Footer() {
         </Grid.Column>
         <Grid.Column className="Footer__right">
           <List horizontal>
-            <List.Item as="a" href="https://github.com/IngenieroFlorez" target="_blank" rel="noreferrer">
+            <List.Item as="a" href="https://github.com/devflorez" target="_blank" rel="noreferrer">
               <Icon icon="akar-icons:github-fill" height="45" />
             </List.Item>
             <List.Item as="a" href="https://vm.tiktok.com/ZMLeetfQ8/" target="_blank" rel="noreferrer">

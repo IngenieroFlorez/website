@@ -17,7 +17,7 @@
     text-align: center;
   }
 
-ul,li,p{
+ul,li,p,strong{
   font-family: Quicksand, -apple-system, BlinkMacSystemFont, "Segoe UI",
   Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
   sans-serif;
@@ -39,7 +39,36 @@ li{
       
       
     }
-
+    h3 {
+      font-family: Lilita One, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    }
+    
+    iframe{
+      height: 316px ;
+      width: 560px;
+    
+    }
+    img{
+      height: 360px ;
+      width: 480px;
+     
+    }
+    a{
+      color: #00D9E1;
+      text-decoration: none;
+    }
+    @media only screen and (max-width: 767px) {
+     img{
+      height: 240px ;
+      width: 100%;
+     }
+     iframe{
+      height: 240px ;
+      width: 100%;
+     }
+    }
    
   }
   &__right {
