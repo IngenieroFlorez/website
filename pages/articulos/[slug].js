@@ -35,16 +35,23 @@ export async function getServerSideProps(context) {
               url
             }
           }
+          videos {
+            video
+            portada {
+              url
+            }
+          }
       }
       `);
   return {
     props: {
       articulo: data.articulo,
       categorias: data.categorias,
+      video: data.videos.pop(),
     },
   };
 }
-export default function Slug({ articulo, categorias }) {
+export default function Slug({ articulo, categorias,video }) {
   if (articulo === null) {
     return <NotFound />;
   }
@@ -91,7 +98,7 @@ export default function Slug({ articulo, categorias }) {
                 ))}
               </List>
               <h2>Último video</h2>
-              <VideoCard />
+              <VideoCard  video={video}/>
             </div>
           </Grid.Column>
         </Grid>

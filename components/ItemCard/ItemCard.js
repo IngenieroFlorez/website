@@ -25,26 +25,13 @@ export default function ItemCard({
   return (
     <div className="itemCard" id={id}>
       <div className="itemCard__title">
-        <Grid columns={2} textAlign="left" doubling>
-          <Grid.Column>
-            <h3>{titulo}</h3>
-          </Grid.Column>
+        <h3>{titulo}</h3>
 
-          <Grid.Column className="itemCard__title__category">
-            <Grid
-              columns={categorias.length == 0 ? 1 : categorias.length}
-              doubling
-            >
-              {categorias.map((categoria, index) => (
-                <Grid.Column key={index}>
-                  <span className={categoria.categoria}>
-                    {categoria.titulo}
-                  </span>
-                </Grid.Column>
-              ))}
-            </Grid>
-          </Grid.Column>
-        </Grid>
+        {categorias.map((categoria, index) => (
+          <span className={categoria.categoria} key={index}>
+            {categoria.titulo}
+          </span>
+        ))}
       </div>
       <div className="itemCard__content">
         <p>{descripcion}</p>

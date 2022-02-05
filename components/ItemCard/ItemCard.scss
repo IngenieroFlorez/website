@@ -3,9 +3,11 @@
   border-radius: 20px;
   padding: 20px;
   margin-bottom: 10px;
- 
-  
+
   &__title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
     h3 {
       margin: 0;
@@ -32,23 +34,18 @@
         background-color: $tertiary;
       }
       &.mobile {
-        background-color:  #73FFA0;
+        background-color: #73ffa0;
       }
       &.robotica {
-        background-color: #9E40FF;
+        background-color: #9e40ff;
       }
       border-radius: 20px;
       padding: 8px;
       margin: 5px;
-      @media (max-width: 767px) {
-        display: none;
-        font-size: 5px;
-      }
-    
     }
-    .ui.grid{
-      .column{
-        &__category{
+    .ui.grid {
+      .column {
+        &__category {
           @media (max-width: 767px) {
             display: none !important;
             font-size: 5px;
@@ -56,7 +53,7 @@
         }
       }
     }
-    &__category{
+    &__category {
       @media (max-width: 767px) {
         display: none;
         font-size: 5px;
@@ -82,5 +79,4 @@
         sans-serif;
     }
   }
-  
 }

@@ -41,7 +41,7 @@ export async function getServerSideProps(context) {
         `);
 
   const category = data.categorias.find((c) => c.categoria === categoria);
-  console.log(category);
+
   return {
     props: {
       categoria: category,

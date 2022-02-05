@@ -33,16 +33,26 @@ export async function getServerSideProps(context) {
         url
       }
     }
+    videos {
+      video
+      portada {
+        url
+      }
+    }
   }
     `);
+
+  const videos = data.videos.slice(-10).reverse();
+
   return {
     props: {
       articulos: data.articulos,
+      videos,
     },
   };
 }
 
-export default function Home({ articulos }) {
+export default function Home({ articulos, videos }) {
   return (
     <Layout>
       <Seo>
@@ -77,7 +87,11 @@ export default function Home({ articulos }) {
             <div className="Home__left">
               <h1>Hola Mundo. Bienvenidos a mi sitio web</h1>
               <p>
-              Soy ingeniero mecatrónico con alma de desarrollador frontend y quiero enseñarte todo lo que he aprendido en mis estudios, haciendo una gran combinación entre la mecatrónica y el desarrollo web. ¿Qué te parece un proyecto en NextJS más Arduino?
+                Soy ingeniero mecatrónico con alma de desarrollador frontend y
+                quiero enseñarte todo lo que he aprendido en mis estudios,
+                haciendo una gran combinación entre la mecatrónica y el
+                desarrollo web. ¿Qué te parece un proyecto en NextJS más
+                Arduino?
               </p>
               <List horizontal>
                 <List.Item>
@@ -114,28 +128,32 @@ export default function Home({ articulos }) {
         </Grid>
         <div className="Home__slider">
           <Slider {...SettingsAdv}>
-            <Image
-              src="/images/slider1.png"
-              width={1546}
-              height={423}
-              alt="slider1"
-            />
-            <Image
+            <div>
+              <Image
+                src="/images/slider1.png"
+                width={1546}
+                height={423}
+                alt="slider1"
+              />
+            </div>
+          <div>
+          <Image
               src="/images/slider2.png"
               width={1546}
               height={423}
               alt="slider2"
-              layout="responsive"
             />
+          </div>
           </Slider>
         </div>
         <div className="Home__posts">
           <h2>Ultimos videos</h2>
           <Slider {...SettingsVideo}>
-            <VideoCard />
-            <VideoCard />
-            <VideoCard />
-            <VideoCard />
+            {videos.map((video, index) => (
+              <div key={index}>
+                <VideoCard video={video} />
+              </div>
+            ))}
           </Slider>
           <h2>Últimos artículos</h2>
           {articulos.map((articulo, index) => (

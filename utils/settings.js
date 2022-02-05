@@ -8,6 +8,9 @@ export const SettingsAdv = {
   autoplaySpeed: 5000,
   pauseOnHover: true,
 };
+
+
+
 export const SettingsVideo = {
   dots: true,
   infinite: true,

@@ -35,16 +35,24 @@ export async function getServerSideProps(context) {
         url
       }
     }
+    videos {
+      video
+      portada {
+        url
+      }
+    }
   }
     `);
+    const video = data.videos.pop()
   return {
     props: {
       articulos: data.articulos,
       categorias: data.categorias,
+      video
     },
   };
 }
-export default function Index({ articulos, categorias }) {
+export default function Index({ articulos, categorias ,video}) {
 
   return (
     <Layout>
@@ -95,7 +103,7 @@ export default function Index({ articulos, categorias }) {
                 ))}
               </List>
               <h2>Último video</h2>
-              <VideoCard />
+              <VideoCard video={video} />
             </div>
           </Grid.Column>
         </Grid>
