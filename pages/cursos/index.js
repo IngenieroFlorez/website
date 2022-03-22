@@ -57,7 +57,7 @@ export default function Index({ videos }) {
         </div>
         <div>
           <h1>Videos</h1>
-          <Grid columns={3}>
+          <Grid columns={3} stackable>
             {videos.map((video, index) => (
               <Grid.Column key={index}>
                 <VideoCard video={video} />
