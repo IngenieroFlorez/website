@@ -36,6 +36,12 @@ export async function getServerSideProps(context) {
                 }
               }
           }
+          videos {
+            video
+            portada {
+              url
+            }
+          }
       }
       
         `);
@@ -46,10 +52,11 @@ export async function getServerSideProps(context) {
     props: {
       categoria: category,
       categorias: data.categorias,
+      video: data.videos.pop(),
     },
   };
 }
-export default function Categoria({ categoria, categorias }) {
+export default function Categoria({ categoria, categorias , video}) {
   const { titulo, articulo } = categoria;
   if (categoria === null) {
     return <NotFound />;
@@ -121,7 +128,7 @@ export default function Categoria({ categoria, categorias }) {
                 ))}
               </List>
               <h2>Último video</h2>
-              <VideoCard />
+              <VideoCard video={video} />
             </div>
           </Grid.Column>
         </Grid>
