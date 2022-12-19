@@ -18,6 +18,9 @@ function MyApp({ Component, pageProps }) {
     };
   }, [router.events]);
 
+  // is december month
+  const isDecember = new Date().getMonth() === 11;
+
   return (
     <>
       {/* Global Site Tag (gtag.js) - Google Analytics */}
@@ -25,6 +28,9 @@ function MyApp({ Component, pageProps }) {
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
       />
+      {isDecember && <Script id="snow" src="https://app.embed.im/snow.js" 
+        defer
+      />}
       <Script
         id="gtag-init"
         strategy="afterInteractive"

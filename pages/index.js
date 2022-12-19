@@ -52,6 +52,8 @@ export async function getServerSideProps(context) {
   };
 }
 
+const isDecember = new Date().getMonth() === 11;
+
 export default function Home({ articulos, videos }) {
   return (
     <Layout>
@@ -84,7 +86,10 @@ export default function Home({ articulos, videos }) {
       <div className="Home">
         <Grid centered doubling columns={2}>
           <Grid.Column>
-            <div className="Home__left">
+            <div
+              className="Home__left"
+              style={isDecember ? { color: "white" } : { color: "black" }}
+            >
               <h1>Hola Mundo. Bienvenidos a mi sitio web</h1>
               <p>
                 Soy ingeniero mecatrónico con alma de desarrollador frontend y
@@ -136,14 +141,14 @@ export default function Home({ articulos, videos }) {
                 alt="slider1"
               />
             </div>
-          <div>
-          <Image
-              src="/images/slider2.png"
-              width={1546}
-              height={423}
-              alt="slider2"
-            />
-          </div>
+            <div>
+              <Image
+                src="/images/slider2.png"
+                width={1546}
+                height={423}
+                alt="slider2"
+              />
+            </div>
           </Slider>
         </div>
         <div className="Home__posts">
